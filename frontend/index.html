@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Reminder</h1>
+            <div class="header-icons">
+                <button class="icon-btn">🔍</button>
+                <button class="icon-btn">⋮</button>
+            </div>
+        </div>
+
+        <div class="category-grid">
+            <div class="category-card" data-category="today">
+                <div class="category-icon">📅</div>
+                <div class="category-label">Today</div>
+                <div class="category-count" id="todayCount">0</div>
+            </div>
+            <div class="category-card" data-category="scheduled">
+                <div class="category-icon">🕐</div>
+                <div class="category-label">Scheduled</div>
+                <div class="category-count" id="scheduledCount">0</div>
+            </div>
+            <div class="category-card" data-category="important">
+                <div class="category-icon">⭐</div>
+                <div class="category-label">Important</div>
+                <div class="category-count" id="importantCount">0</div>
+            </div>
+            <div class="category-card" data-category="place">
+                <div class="category-icon">📍</div>
+                <div class="category-label">Place</div>
+                <div class="category-count" id="placeCount">0</div>
+            </div>
+            <div class="category-card" data-category="noAlert">
+                <div class="category-icon">🔔</div>
+                <div class="category-label">No alert</div>
+                <div class="category-count" id="noAlertCount">0</div>
+            </div>
+            <div class="category-card" data-category="completed">
+                <div class="category-icon">✓</div>
+                <div class="category-label">Completed</div>
+                <div class="category-count" id="completedCount">0</div>
+            </div>
+        </div>
+
+        <div class="section-title">alert</div>
+        <div class="task-list" id="alertTasks"></div>
+
+        <div class="section-title">no alert</div>
+        <div class="task-list" id="noAlertTasks"></div>
+
+        <div class="add-btn-container">
+            <button class="add-btn">
+                <span class="add-icon">+</span>
+                <span>Add reminder</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="add-task-popup" id="addTaskPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <button class="back-btn">←</button>
+                <h2>New reminder</h2>
+                <button class="star-btn-popup" id="newStarBtn">☆</button>
+            </div>
+            <input type="text" class="task-input" id="newTaskTitle" placeholder="Title">
+            <div class="popup-row">
+                <span class="popup-icon">📅</span>
+                <input type="datetime-local" class="datetime-input" id="newTaskDatetime">
+            </div>
+            <button class="save-task-btn">Save</button>
+        </div>
+    </div>
+
+    <div class="task-detail-popup" id="taskDetailPopup">
+        <div class="detail-popup-content">
+            <div class="popup-header">
+                <button class="back-btn">←</button>
+                <h2>Edit reminder</h2>
+                <button class="star-btn-popup" id="editStarBtn">☆</button>
+            </div>
+            <input type="text" class="task-input" id="editTaskTitle" placeholder="Title">
+            <div class="popup-row">
+                <span class="popup-icon">📅</span>
+                <input type="datetime-local" class="datetime-input" id="editTaskDatetime">
+            </div>
+            <button class="save-task-btn">Save changes</button>
+            <button class="delete-btn-popup">Delete</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
